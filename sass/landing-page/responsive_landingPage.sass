@@ -1,0 +1,116 @@
+// everything above phablets dimensions
+@media screen and(max-width: 60em)
+  .segment.text
+    border-radius: 0px
+
+    nav
+      #mainMenu
+        ul
+          li
+            &:first-child
+              margin-left: 0px
+            a
+
+        .menuButton
+          margin-right: 28px
+  #first-segment
+    .segment.headline-bg
+      min-height: 0px
+      img
+        top: 50%
+
+
+  #content
+    #second-segment
+      background: none
+      .segment.text
+        margin-top: 0px
+        z-index: 3
+        img
+          width: 100vw
+
+  #thirdh-segment
+    margin-top: 0px
+    padding-top: 150px
+    padding-bottom: 150px
+
+  #fourth-segment
+    .segment.text
+      margin-top: 0px
+      z-index: 4
+
+////////////// 35 em treshold ///////////////
+@media screen and(max-width: 35em)
+  #second-segment
+    .segment.text
+      img
+        width: 100vw
+
+      .contact-box
+        width: 100%
+
+      .contact-box.left
+        padding-right: 0px
+        text-align: left
+        border-right: none
+        border-bottom: 1px solid #DCDCDC
+
+      .contact-box.right
+        padding-left: 0px
+
+////////////// 32 em treshold ///////////////
+@media screen and(max-width: 32em)
+  #content
+    nav
+      #mainMenu
+        ul
+          float: left
+          width: 65%
+          li
+            float: left
+            display: inline-block
+            a
+              text-align: center
+              font-size: 12px
+              padding: 10px 12px
+        .menuButton
+          margin-top: 7px
+          margin-right: 2%
+          padding: 9px 25px
+          float: right
+          display: block
+          font-size: 12px
+
+  #content
+    #second-segment
+      .segment.text
+        background:
+          image: url('img/decorative_paper_01.jpg')
+          position: center
+        img
+          margin-left: -($universal-padding / 2)
+      .padding
+        padding: 0px ($universal-padding / 2)
+
+  #thirdh-segment
+    padding-top: 100px
+    padding-bottom: 100px
+    .segment.headline
+      background: hsla(0,0%,100%,0.5)
+      h2
+        font-size: 3.2em
+        .smaller
+          font-size: 18px
+      .separator
+        margin: 20px auto ($universal-padding / 2)
+
+
+////////////// 22 em treshold ///////////////
+@media screen and(max-width: 22em)
+  #content
+    nav
+      #mainMenu
+        ul
+          li
+            a
+              padding: 10px 8px

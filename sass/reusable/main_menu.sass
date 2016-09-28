@@ -1,0 +1,57 @@
+// menu
+nav
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 2
+  width: 100vw
+  max-width: none
+  background: white
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.2)
+
+  #mainMenu
+    max-width: $content-max-width
+    margin: 0 auto
+    ul
+      list-style: none
+      margin: 0px
+      padding: 0px
+      float: left
+      li
+        float: left
+        border-right: 1px solid #DDD
+        &:first-child
+          border-left: 1px solid #DDD
+        a
+          display: block
+          font-size: 14px
+          padding: 13px 28px
+          color: #666
+          letter-spacing: 0.2em
+          &:hover
+            transition: 0.2s
+            color: #000
+            text-decoration: underline
+          &:active
+            transition: 0s
+            color: #000
+            text-decoration: underline
+            background: hsla(0,0%,0%,0.3)
+      li.current_page_item
+        a
+          color: #000
+
+    .menuButton
+      float: right
+      margin-top: 8px
+      letter-spacing: 0.07em
+      padding: 10px 26px
+      background: hsl(46, 65%, 48%)
+      box-shadow: 0px 2px 0px hsl(46, 65%, 38%)
+      &:hover
+        transition: 0.2s
+        background: hsla(46, 65%, 58%, 1)
+      &:active
+        transition: 0s
+        background: hsla(46, 65%, 32%, 1)
+        box-shadow: inset 0px 2px 2px rgba(0,0,0,0.5)

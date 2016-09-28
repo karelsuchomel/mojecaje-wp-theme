@@ -1,0 +1,99 @@
+.question-preview-wrap
+  padding: ($universal-padding / 1.5) $universal-padding
+
+  .question-preview-text
+    h2
+      display: inline-block
+      font-size: 1.3em
+      line-height: 1.5em
+      margin: 0px
+      a
+        &:hover, &:active
+          text-decoration: underline
+
+    p
+      display: inline-block
+      margin: 0px
+      color: hsl(0, 0%, 50%)
+
+    hr
+      margin: 10px 20px 5px 0px
+      border-color: hsl(0, 0%, 70%)
+
+    em
+      float: left
+      font-size: 12px
+      margin: 0px
+      margin-right: 25px
+      color: hsl(0, 0%, 50%)
+
+    .comment-icon
+      display: inline-block
+      margin-bottom: -1px
+      margin-right: -2px
+      height: 12px
+      width: 18px
+      background:
+        image: url('img/comment_bouble.png')
+
+// other than question previews
+.question-gradient-fadeout
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,1))
+  pointer-events: none
+
+.show-more
+  display: block
+  padding: 20px
+  &:hover, &:active
+    .dot-dot-dot
+      transition: 0.2s
+      background: hsl(349, 42%, 45%)
+  &:active
+    background: hsla(0,0%,0%,0.3)
+    .dot-dot-dot
+      transition: 0.2s
+      background: hsl(349, 42%, 45%)
+
+.dot-dot-dot
+  margin: 0px auto
+  display: block
+  max-width: 62px
+  box-sizing: border-box
+  position: relative
+  background: hsl(349, 0%, 45%)
+  border-radius: 4px
+  padding: 7px
+  .dot
+    border-radius: 50%
+    height: 6px
+    width: 6px
+    float: left
+    background: white
+    margin: 0px 5px
+
+p.consult
+  display: block
+  margin: 20px auto
+  max-width: 300px
+  text-align: center
+  font-weight: 500
+
+button.consult
+  padding: 10px 50px 10px
+  font-size: 18px
+  background: hsl(345, 51%, 48%)
+  margin: ($universal-padding / 2) auto
+  display: block
+  &:hover
+    transition: 0.2s
+    background: hsl(345, 71%, 65%)
+  &:active
+    transition: 0s
+    background: hsl(345, 51%, 38%)
+
+@import "_create_question_form"

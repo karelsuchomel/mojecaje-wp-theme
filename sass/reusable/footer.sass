@@ -1,0 +1,86 @@
+#content
+  .segment.footer
+    margin: $universal-padding auto 0px
+    padding: 0px 0px $universal-padding
+    overflow: visible
+
+    #newsletter-form
+      display: inline-block
+      width: 100%
+      margin: 0px
+      float: left
+      text-align: center
+
+      label#label-email
+        display: block
+        position: relative
+        margin-top: ($universal-padding / 2)
+        margin-bottom: -25px
+        margin-left: 10px
+        color: #777
+        font-size: 0.9em
+
+      input#input-email
+        display: block
+        margin: 0 auto
+        max-width: 500px
+        box-sizing: border-box !important
+        padding: 35px 15px 15px
+        font-size: 1.2em
+        background: white
+        text-align: center
+        color: #444
+        &:focus
+          transition: 0.2s
+          box-shadow: 0px 0px 20px 0px hsla(0, 0%, 60%, 0.4)
+
+      em#em-email
+        display: block
+        position: relative
+        margin-top: 10px
+        margin-left: 10px
+
+      button
+        margin-top: ($universal-padding / 2)
+        background: hsl(349, 42%, 45%)
+        &:hover
+          transition: 0.2s
+          background: hsl(349, 42%, 55%)
+        &:active
+          transition: 0s
+          background: hsl(349, 42%, 35%)
+
+
+    .footer-segment
+      display: inline-block
+      float: left
+      width: 25%
+
+      h3
+        margin: $universal-padding 0px
+        color: hsl(0, 0%, 20%)
+        font-weight: 500
+        font-size: 1.2em
+        line-height: 1.2em
+        margin: 10px 0px
+
+      ul
+        margin: 0px
+        padding: 0px
+        list-style: none
+        li
+          float: left
+          margin-right: 15px
+          a
+          text-decoration: underline
+
+
+// Responsive footer
+
+////////////// 32 em treshold ///////////////
+@media screen and(max-width: 32em)
+  #content
+    .segment.footer
+      #newsletter-form
+        input#input-email
+          max-width: 300px

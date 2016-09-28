@@ -1,0 +1,67 @@
+// everything above phablets dimensions
+@media screen and(max-width: 60em)
+  #consult-first-segment
+    .segment.headline-bg
+      .segment.headline
+        margin: 140px auto 110px
+
+  #questions-segment
+    background: none
+    .segment.text
+      margin-top: -60px
+
+////////////// 32 em treshold ///////////////
+@media screen and(max-width: 32em)
+  #consult-first-segment
+    .segment.headline-bg
+      .segment.headline
+        margin: 200px auto 110px
+        h1
+          font-size: 3.5em
+        .separator
+          margin: 0px auto 0px
+
+  #questions-segment
+    .segment.text
+      span.questions-cathegories
+        ul
+          width: 100%
+          li
+            width: 33.333333%
+            box-sizing: border-box
+            a
+              padding: 8px 0px
+              text-align: center
+          li.white-placeholder
+            display: none
+
+  .question-preview-wrap
+    padding: ($universal-padding / 1.5) ($universal-padding / 2)
+    padding-left: 0px
+    .question-preview-avatar
+      width: 15%
+      text-align: center
+      padding-right: 15px
+      padding-top: 5px
+
+      .question-avatar
+        height: 30px
+        width: 30px
+        margin-bottom: 15px
+        background-size: contain
+
+      .person-name
+        font-size: 12px
+        margin-top: 15px
+
+    .question-preview-text
+      max-width: 85%
+
+////////////// 24 em treshold ///////////////
+@media screen and(max-width: 24em)
+  .question-preview-wrap
+    padding: ($universal-padding / 1.5) ($universal-padding / 2)
+    .question-preview-avatar
+      display: none
+    .question-preview-text
+      max-width: 100%

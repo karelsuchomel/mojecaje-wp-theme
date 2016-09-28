@@ -1,0 +1,59 @@
+#questions-segment
+  background:
+    image: url('img/decorative_paper_01.jpg')
+    position: center
+
+  .segment.text
+    margin-top: -150px
+    z-index: 3
+    background: none
+    background: white
+
+    ul.questions-cathegories
+      list-style: none
+      margin: 0px
+      padding: 0px
+      display: block
+      width: 20%
+      box-sizing: border-box
+      float: left
+      li
+        width: 100%
+        a
+          letter-spacing: 0.02em
+          text-align: right
+          display: block
+          font-size: 14px
+          padding: 10px 25px
+          color: #666
+          border-top: 1px solid #DDD
+          &:hover
+            transition: 0.2s
+            color: #000
+            text-decoration: underline
+          &:active
+            transition: 0s
+            color: #000
+            text-decoration: underline
+            background: hsla(0,0%,0%,0.3)
+
+        a.last
+          border-bottom: 1px solid #DDD
+
+
+    .questions
+      width: 80%
+      box-sizing: border-box
+      float: left
+      border-left: 1px solid rgba(0,0,0,0.2)
+
+  #button-show-moderators
+    display: block
+    text-align: center
+    padding: 20px
+    margin: 25px 0px
+    color: hsl(230, 23%, 60%)
+    font-size: 14px
+    &:active, &:hover
+      transition: 0.2s
+      color: hsl(230, 23%, 30%)
