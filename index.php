@@ -14,7 +14,7 @@ get_header();
     <div class="segment text padding">
       <h2>Něco o nás</h2>
       <p>
-        Vítejte na stránkách obchodu s přírodními produkty, který má se nachází v samém historickém centru Brna a naši věrní zákazníci u nás nakupují víc než 25 let. V naší nabídce najdete široký sortiment bylinek, produktů tradiční přírodní medicíny a výběrových čajů z asie.
+        Vítejte na stránkách obchodu s přírodními produkty, který má se nachází v samém historickém centru Brna a naši věrní zákazníci u nás nakupují víc než 25 let. V naší nabídce najdete široký sortiment bylinek, produktů tradiční přírodní medicíny a výběrových čajů z Asie.
       </p>
       <h3>Nabízíme:</h3>
       <ul style="margin: 0px;">
@@ -33,17 +33,18 @@ get_header();
       </ul>
       <img src="<?php bloginfo('template_directory'); ?>/img/maps_placeholder.png" alt="Okaz na mapy google">
       <div class="contact-box left">
-        <h2>Opened at</h2>
+        <h2>Otevřeno</h2>
         <p>
           Po-Pá: 09:00-18:00 <br>
           Sobota: 09:00-12:00
         </p>
       </div>
       <div class="contact-box right">
-        <h2>Contact</h2>
+        <h2>Najdete nás</h2>
         <p>
-          Adresa: Radnická 354, Brno<br>
-          Telefon: +420 555 333 222<br>
+          Adresa: Radnická 5 , 60200 Brno<br>
+          Telefon: +420 542 215 706<br>
+          GPS: +420 555 333 222<br>
         </p>
       </div>
       <button onclick="dimMessage('contactUs')" class="contact-us">Napište nám</button>

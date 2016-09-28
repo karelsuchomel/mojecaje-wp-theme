@@ -33,7 +33,7 @@ function validateInput() {
     {
 
 
-      wp_insert_post( array $postarr, bool $wp_error = false )
+      //wp_insert_post( array $postarr, bool $wp_error = false )
       
     }
   }
