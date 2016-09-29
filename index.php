@@ -44,7 +44,7 @@ get_header();
         <p>
           Adresa: Radnická 5 , 60200 Brno<br>
           Telefon: +420 542 215 706<br>
-          GPS: +420 555 333 222<br>
+          GPS: 49°11'36.646"N 16°36'32.037"E<br>
         </p>
       </div>
       <button onclick="dimMessage('contactUs')" class="contact-us">Napište nám</button>

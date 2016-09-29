@@ -6,16 +6,18 @@ get_header();
 <div id="content">
   <div id="first-segment">
     <?php include('main_menu.php') ?>
+    <div class="segment headline-bg about-us">
+    </div>
   </div>
   <div id="second-segment">
-    <div class="segment text padding"  style="margin-top: 70px;">
+    <div class="segment text padding">
       <h2>O nás</h2>
       <p>
 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      </p><img src="<?php bloginfo('template_directory'); ?>/img/shop.JPG" width="960px">
+      </p>
       <div class="contact-box left">
         <h2>Opened at</h2>
         <p>

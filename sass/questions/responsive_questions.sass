@@ -23,17 +23,24 @@
 
   #questions-segment
     .segment.text
-      span.questions-cathegories
-        ul
-          width: 100%
-          li
-            width: 33.333333%
+      ul.questions-cathegories
+        display: block
+        width: 100%
+        float: none
+        li
+          width: 33.3333%
+          float: left
+          a
+            padding: 10px 0px
+            text-align: center
+            border: 1px solid #DDD
             box-sizing: border-box
-            a
-              padding: 8px 0px
-              text-align: center
-          li.white-placeholder
-            display: none
+
+  #questions-segment
+    .segment.text
+      .questions
+        width: 100%
+        float: none
 
   .question-preview-wrap
     padding: ($universal-padding / 1.5) ($universal-padding / 2)
