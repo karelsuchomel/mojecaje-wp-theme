@@ -12,25 +12,20 @@ get_header();
   </div>
   <div id="second-segment">
     <div class="segment text padding">
-      <h2>Něco o nás</h2>
-      <p>
-        Vítejte na stránkách obchodu s přírodními produkty, který má se nachází v samém historickém centru Brna a naši věrní zákazníci u nás nakupují víc než 25 let. V naší nabídce najdete široký sortiment bylinek, produktů tradiční přírodní medicíny a výběrových čajů z Asie.
-      </p>
-      <h3>Nabízíme:</h3>
-      <ul style="margin: 0px;">
-        <li>Bylinky sypané a bylinky v nálevkových sáčcích</li>
-        <li>Bylinkové speciality Sonnentor, GREŠÍK, Apotheke</li>
-        <li>Pravé čaje zelené, černé, bílé i oolongy</li>
-        <li>Ovocné čaje, rooibos, maté, cizokrajné speciality</li>
-        <li>Prémiové čaje BASILUR - produkty špičkové kvality ze Sri lanky</li>
-        <li>Další výběrové značky čaje JAF TEA, DILMAH, SEBASTEA, Tipson a Tarlton</li>
-        <li>Anglické čaje PUKKA, THE ENGLISH TEA SHOP,  Tea of life</li>
-        <li>Koutek kávy a čokolády v biokvalitě</li>
-        <li>SUŠENÉ PLODY, RAW & SUPERPOTRAVINY</li>
-        <li>ČAJOVÝ VELEJEMNÝ PORCELÁN</li>
-        <li>Polštáře BYLINKOVÉ & POHANKOVÉ</li>
-        <li>Aromaterapie a produkty Saloos</li>
-      </ul>
+      <?php 
+      wp_reset_postdata();
+      $mainPage = new WP_Query('pagename=hlavni-strana');
+
+      if($mainPage -> have_posts()) :
+        while($mainPage -> have_posts()) : $mainPage -> the_post();
+        ?>
+
+        <?php the_content() ?>
+
+        <?php endwhile; else:
+          endif;
+          wp_reset_postdata();
+      ?>
       <img src="<?php bloginfo('template_directory'); ?>/img/maps_placeholder.png" alt="Okaz na mapy google">
       <div class="contact-box left">
         <h2>Otevřeno</h2>
