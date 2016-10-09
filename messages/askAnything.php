@@ -11,7 +11,7 @@
       </a>
   </div>
   
-  <?php //require_once('contact_form_processor.php'); ?>
+  <?php require_once('contact_form_processor.php'); ?>
 
   <form action="#" method="POST" class="content">
     <input type="hidden" name="formSended">
@@ -19,16 +19,16 @@
       <div class="step-box">
         <label for="name">Jméno <span class='asterisk'>*</span></label>
         <input type="text" name="name" id="name" placeholder="Jak vás můžeme v odpovědi oslovit?"
-          value="<?php //if(isset($_POST['name'])) echo $_POST['name']; ?>"
+          value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>"
         required/>
       </div>
     </div>
     <div class="individual-step-wrap"><em><strong>2/3</strong> - Nadpis, obsah</em>
       <div class="step-box">
         <label for="headline">Nadpis <span class='asterisk'>*</span></label>
-        <input type="text" name="headline" id="headline" placeholder='např. "Velké čajové dilema" není úplně výstižné' required/>
+        <input type="text" name="headline" id="headline" placeholder='např. "Velké čajové dilema"' required/>
         <label for="question-text">Obsah <span class='asterisk'>*</span></label>
-        <textarea type="text" name="question-text" id="question-text" rows="5" placeholder="např. Jak velký hřích je louhovat stejný sáček vícekrát?... (velký)" required></textarea>
+        <textarea type="text" name="question-text" id="question-text" rows="5" placeholder="např. Jak velký hřích je louhovat stejný sáček vícekrát?" required></textarea>
       </div>
     </div>
     <div class="individual-step-wrap"><em><strong>3/3</strong> - Verifikace, e-mail</em>
