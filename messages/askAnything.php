@@ -10,17 +10,16 @@
       </svg>
       </a>
   </div>
-  
-  <?php require_once('contact_form_processor.php'); ?>
 
-  <form action="#" method="POST" class="content">
+  <!-- for validation, that form was submitted from this page -->
+  <?php wp_nonce_field( 'post_nonce', 'post_nonce_field' ); ?>
+
+  <form method="POST" class="content">
     <input type="hidden" name="formSended">
     <div class="individual-step-wrap"><em><strong>1/3</strong> - Jméno, obrázek</em>
       <div class="step-box">
-        <label for="name">Jméno <span class='asterisk'>*</span></label>
-        <input type="text" name="name" id="name" placeholder="Jak vás můžeme v odpovědi oslovit?"
-          value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>"
-        required/>
+        <label for="nickName">Jméno <span class='asterisk'>*</span></label>
+        <input type="text" name="nickName" id="nickName" placeholder="Jak vás můžeme v odpovědi oslovit?" required/>
       </div>
     </div>
     <div class="individual-step-wrap"><em><strong>2/3</strong> - Nadpis, obsah</em>
@@ -40,6 +39,8 @@
         </div>
       </div>
     </div>
+
+    <?php require_once('contact_form_processor.php'); ?>
 
     <button type="submit" class="ask-anything">Zveřejnit dotaz</button>
   </form>

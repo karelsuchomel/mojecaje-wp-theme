@@ -3,17 +3,24 @@
 $publickKeyRecaptcha = '6Lc6iBcTAAAAAI_oJjNuHMXmCnx319L9em1D-e8o';
 $secretKeyRecaptcha = '6Lc6iBcTAAAAADzPMlwN1s5SjgXYzoBoGU9JD3Yd';
 
-$name = htmlspecialchars($_POST['name']);
-$headline = htmlspecialchars($_POST['headline']);
-$questionText = htmlspecialchars($_POST['question-text']);
+$nickName;
+$headline;
+$questionText;
 
 if (isset($_POST['formSended'])) {
+  global $nickName, $headline, $questionText;
+  $nickName = $_POST['nickName'];
+  $headline = $_POST['headline'];
+  $questionText = $_POST['question-text'];
+
+  echo $nickName ,", ", $headline ,", ", $questionText;
   validateInput();
 }
 
 function validateInput() {
+  global $nickName, $headline, $questionText;
 
-  if (($name=="")||($email=="")||($message=="")) {
+  if (($nickName == "") || ($headline == "") || ($questionText == "")) {
     echo "<strong>Some fields are required, plese fill remaining fields.</strong>";
   }
   else{
@@ -31,10 +38,17 @@ function validateInput() {
       echo '<strong>Please stop...</strong>';
     } else {
 
-      $postarr = ('post_content' => $questionText, 'post_title' => $headline, 'post_status' => 'publish');
+      $my_post = array(
+        'post_title'    => wp_strip_all_tags($_POST['headline']),
+        'post_content'  => $_POST['question-text'],
+        'post_type'     => 'post',
+        'post_status'   => 'publish',
+        'post_author'   => 1,
+        'post_category' => array(1)
+      );
 
-      wp_insert_post($postarr, $wp_error = true);
-      
+      wp_insert_post($my_post);
+
     }
   }
 

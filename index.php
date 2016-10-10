@@ -12,7 +12,7 @@ get_header();
   </div>
   <div id="second-segment">
     <div class="segment text padding">
-      <?php 
+      <?php
       wp_reset_postdata();
       $mainPage = new WP_Query('pagename=hlavni-strana');
 
@@ -80,12 +80,6 @@ get_header();
       endif;
       wp_reset_postdata();
       ?>
-      <div class="question-gradient-fadeout"></div>
-      <div class="dot-dot-dot">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
       <p class="consult">A dalším 327 chytrých dotazů</p>
       <button onclick="location.href='consulting.html';" class="consult">poradíme</button>
     </div>
