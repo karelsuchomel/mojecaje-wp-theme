@@ -8,6 +8,6 @@
     wp_nav_menu( $args );
     ?>
 
-    <button onclick="location.href='shop.html';" class="menuButton">E-shop</button>
+    <button onclick="location.href='index.php/shop';" class="menuButton">E-shop</button>
   </div>
 </nav>
