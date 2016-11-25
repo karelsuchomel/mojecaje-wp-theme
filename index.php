@@ -10,13 +10,8 @@ get_header();
       <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Logo">
     </div>
   </div>
-  <div id="shop-segment">
-    <div class="segment text padding">
-      [recent_products per_page="8" columns="4"]
-    </div>
-  </div>
   <div id="second-segment">
-    <div class="segment text padding" style="margin-top: 0px;">
+    <div class="segment text padding">
       <?php
       wp_reset_postdata();
       $mainPage = new WP_Query('pagename=hlavni-strana');
