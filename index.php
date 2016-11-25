@@ -26,7 +26,12 @@ get_header();
           endif;
           wp_reset_postdata();
       ?>
+      <a href="https://www.google.cz/maps/place/Radnick%C3%A1+383%2F5,+602+00+Brno-st%C5%99ed-Brno-m%C4%9Bsto/@49.1934579,16.6083293,19z/data=!3m1!4b1!4m5!3m4!1s0x47129456d6318b37:0xbef6da1e5504b776!8m2!3d49.193457!4d16.6088765?hl=en" target="_blank" id="map-link">
       <img src="<?php bloginfo('template_directory'); ?>/img/maps_placeholder.png" alt="Okaz na mapy google">
+      <div class="message-show-map">
+        <h2>zobrazit na mapě</h2>
+      </div>
+      </a>
       <div class="contact-box left">
         <h2>Otevřeno</h2>
         <p>
@@ -40,14 +45,17 @@ get_header();
           Adresa: Radnická 5 , 60200 Brno<br>
           Telefon: +420 542 215 706<br>
           GPS: 49°11'36.646"N 16°36'32.037"E<br>
+          <a href="https://www.facebook.com/U-Zlat%C3%A9-koruny-1419636828282850/",
+          target="_blank">Náš facebook</a>
         </p>
       </div>
-      <button onclick="dimMessage('contactUs')" class="contact-us">Napište nám</button>
+      <button id="contact-us-button" class="contact-us">Napište nám</button>
     </div>
   </div>
   <div id="thirdh-segment">
     <div class="segment headline">
-      <h2>Poradna <br /><span class="smaller">zeptejte se na cokoliv</span></h2>
+      <h2>Poradna</h2><br />
+      <span class="smaller">zeptejte se na cokoliv</span>
       <div class="separator"></div>
     </div>
   </div>
@@ -60,14 +68,16 @@ get_header();
         while ($posts -> have_posts()) : $posts -> the_post();?>
 
         <div class="question-preview-wrap clear-both">
-          <div class="question-preview-avatar">
-            <div style="background-image: url('../img/miniture_avatar01.png');" class="question-avatar"></div>
-            <div class="person-name">Frenk 195</div>
-          </div>
           <div class="question-preview-text">
             <h2><a href="<?php the_permalink()?>"><?php the_title()?></a></h2>
+            <p>
               <?php the_content()?>
-            <hr><em>15/5/2016</em><em><div class="comment-icon"></div> 15 comments</em>
+            </p>
+            <hr/>
+            <em><?php the_date();?></em>
+            <em><?php comments_number('', '<div class="comment-icon"></div>1 komentář', '<div class="comment-icon"></div>% komentářů');?></em>
+            <em><?php the_author();?></em>
+            <?php edit_post_link('<em style="color: red;">Editovat</em>'); ?>
           </div>
         </div>
 
@@ -81,20 +91,20 @@ get_header();
       wp_reset_postdata();
       ?>
       <p class="consult">A dalším 327 chytrých dotazů</p>
-      <button onclick="location.href='consulting.html';" class="consult">poradíme</button>
+      <button onclick="location.href='/index.php?page_id=6';" class="consult">Poradíme</button>
     </div>
-    <div class="segment footer clear-both">
-      <form id="newsletter-form" method="POST" action="">
-        <h3>Máte zájem o náš newsletter?</h3>
-        <label id="label-email" for="input-email">Váš e-mail</label>
-        <input type="email" name="email" id="input-email" placeholder="" aria-describedby="" required aira-required="true"><em id="em-email" class="input-note">Zprávy posíláme 2 - 4 ktrát měsíčně.</em>
-        <button type="submit">Přihlásit</button>
-      </form>
-    </div>
+
+    <?php require_once('newsletter-form.php'); ?>
+    
   </div>
 </div>
+
+<!-- Messages -->
+<!-- Create a question form -->
+<?php require_once('messages/contact-us.php'); ?>
+
 <?php
 
 get_footer();
 
- ?>
+?>

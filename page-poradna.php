@@ -16,7 +16,7 @@ get_header();
   <div class="segment text">
 
     <ul class="questions-cathegories">
-      <button class="ask-anything" id="button-show-form">Nová otázka</button>
+      <button class="ask-anything" id="askAnything">Nová otázka</button>
       <li><a href="#"> Nejnovější </a></li>
       <li><a href="#"> Nejčtenější </a></li>
       <li><a href="#" class="last"> Doporučené </a></li>
@@ -63,15 +63,10 @@ get_header();
     </div>
 
   </div>
-  <div class="segment footer clear-both">
-    <form id="newsletter-form" method="POST" action="">
-      <h3>Máte zájem o náš newsletter?</h3>
-      <label id="label-email" for="input-email">Váš e-mail</label>
-      <input type="email" name="email" id="input-email" placeholder="" aria-describedby="" required="required" aira-required="true"/><em id="em-email" class="input-note">Zprávy posíláme 2 - 4 ktrát měsíčně.</em>
-      <button type="submit">Přihlásit</button>
-    </form>
-  </div>
-  <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
+
+  <?php require_once('newsletter-form.php'); ?>
+  
+  <!-- <p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p> -->
 </div>
 </div>
 

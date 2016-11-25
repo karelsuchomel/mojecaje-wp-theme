@@ -27,8 +27,11 @@
       .segment.text
         margin-top: 0px
         z-index: 3
-        img
+        a#map-link
           width: 100vw
+          margin-left: -50px
+          img
+            width: 100vw
 
   #thirdh-segment
     margin-top: 0px
@@ -44,19 +47,17 @@
 @media screen and(max-width: 35em)
   #second-segment
     .segment.text
-      img
-        width: 100vw
-
       .contact-box
         width: 100%
 
       .contact-box.left
         padding-right: 0px
         text-align: left
-        border-right: none
         border-bottom: 1px solid #DCDCDC
+        margin-bottom: 25px
 
       .contact-box.right
+        border-left: none
         padding-left: 0px
 
 ////////////// 32 em treshold ///////////////
@@ -85,8 +86,8 @@
   #content
     #second-segment
       .segment.text
-        img
-          margin-left: -($universal-padding / 2)
+        a#map-link
+          margin-left: -25px
       .padding
         padding: 0px ($universal-padding / 2)
 

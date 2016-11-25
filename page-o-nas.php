@@ -22,6 +22,15 @@ get_header();
         <?php endwhile; else:
           endif;
       ?>
+
+      <style>
+        img{
+          display: inline-block;
+          max-width: 282px;
+        }
+
+      </style>
+
       <div class="contact-box left">
         <h2>Otevřeno</h2>
         <p>
@@ -37,20 +46,20 @@ get_header();
           GPS: 49°11'36.646"N 16°36'32.037"E<br>
         </p>
       </div>
-      <button onclick="dimMessage('contactUs')" class="contact-us">Napište nám</button>
+      <button  id="contact-us-button" class="contact-us">Napište nám</button>
     </div>
   </div>
   <div id="fourth-segment">
-    <div class="segment footer clear-both">
-      <form id="newsletter-form" method="POST" action="">
-        <h3>Máte zájem o náš newsletter?</h3>
-        <label id="label-email" for="input-email">Váš e-mail</label>
-        <input type="email" name="email" id="input-email" placeholder="" aria-describedby="" required aira-required="true"><em id="em-email" class="input-note">Zprávy posíláme 2 - 4 ktrát měsíčně.</em>
-        <button type="submit">Přihlásit</button>
-      </form>
-    </div>
+
+  <?php require_once('newsletter-form.php'); ?>
+
   </div>
 </div>
+
+<!-- Messages -->
+<!-- Create a question form -->
+<?php require_once('messages/contact-us.php'); ?>
+
 <?php
 
 get_footer();

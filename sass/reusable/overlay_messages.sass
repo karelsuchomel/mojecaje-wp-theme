@@ -55,7 +55,7 @@
     opacity: 0
     transform: translate(-50%, 0) scale(0.8)
 
-@media screen and(max-width: 60em)
+@media screen and(max-width: 40em)
   @keyframes slideIn-message
     from
       transform: translate(100vw, 0)
@@ -139,6 +139,31 @@
 
 //askAnything
 .dim-message-envelope
+  label
+    display: block
+    max-width: 500px
+    font-weight: 500
+    font-size: 14px
+    margin: 20px auto 10px
+    span.asterisk
+      color: hsl(345,51,48)
+
+  em
+    text-align: left
+    padding-top: 5px
+
+  input, textarea
+    padding: 10px 12px
+    border: 1px solid #AAA
+    border-radius: 3px
+    max-width: 500px
+    width: 100%
+    margin: 10px auto
+    font-size: 14px
+
+    &:active, &:focus
+      box-shadow: inset 0px 2px 2px rgba(0,0,0,0.2)
+
   form.content
     margin: 0px
     .individual-step-wrap
@@ -152,35 +177,10 @@
         text-align: center
         padding: 10px 0px
 
-      .step-box
-        padding: 20px
-        border: 1px solid #DDD
-        border-radius: 3px
-
-        label
-          display: block
-          max-width: 500px
-          font-weight: 500
-          font-size: 14px
-          margin: 20px auto 10px
-          span.asterisk
-            color: hsl(345,51,48)
-
-        em
-          text-align: left
-          padding-top: 5px
-
-        input, textarea
-          padding: 10px 12px
-          border: 1px solid #AAA
-          border-radius: 3px
-          max-width: 500px
-          width: 100%
-          margin: 10px auto
-          font-size: 14px
-
-          &:active, &:focus
-            box-shadow: inset 0px 2px 2px rgba(0,0,0,0.2)
+.step-box
+  padding: 20px
+  border: 1px solid #DDD
+  border-radius: 3px
 
 // kdo vám radí?
 .info-card

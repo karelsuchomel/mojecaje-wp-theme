@@ -32,10 +32,15 @@ function drawMessageBox(elementID) {
 }
 
 function createMessageContent(elementID) {
-  if (elementID == "button-show-form"){
-    document.getElementById('message-ask-question-form').className = "dim-message-envelope opened";
-  }
   if (elementID == "askAnything"){
+    document.getElementById('message-ask-question-form').className = "dim-message-envelope opened";
+    var pageScrolledBy = window.pageYOffset;
+    document.getElementById('message-ask-question-form').style.top = pageScrolledBy + "px";
+  }
+  if (elementID == "contact-us-button"){
+    document.getElementById('message-ask-question-form').className = "dim-message-envelope opened";
+    var pageScrolledBy = window.pageYOffset;
+    document.getElementById('message-ask-question-form').style.top = pageScrolledBy + "px";
   }
   if (elementID == "contactUs"){
   }
@@ -65,8 +70,17 @@ function closeMessage() {
 // Event listeners
 window.onload = function() {
   // Open messages
-  document.getElementById("button-show-form").addEventListener("click", dimMessage);
-  document.getElementById("button-show-moderators").addEventListener("click", dimMessage);
+  if(document.getElementById("askAnything")){
+    document.getElementById("askAnything").addEventListener("click", dimMessage);
+  }
+  if(document.getElementById("contact-us-button")){
+    document.getElementById("contact-us-button").addEventListener("click", dimMessage);
+  }
+  if(document.getElementById("button-show-moderators")){
+    document.getElementById("button-show-moderators").addEventListener("click", dimMessage);
+  }
   // Close messages
-  document.getElementById("button-close-form").addEventListener("click", closeMessage);
+  if(document.getElementById("button-close-form")){
+    document.getElementById("button-close-form").addEventListener("click", closeMessage);
+  }
 };
