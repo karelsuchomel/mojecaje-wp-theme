@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <?php require_once('contact_form_processor.php'); ?>
+    <?php require_once('ask_question_form_processor.php'); ?>
 
     <button type="submit" class="ask-anything">Zveřejnit dotaz</button>
   </form>

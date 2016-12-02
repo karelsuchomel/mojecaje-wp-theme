@@ -1,5 +1,5 @@
 // everything above phablets dimensions
-@media screen and(max-width: 60em)
+@media screen and(max-width: 960px)
   #consult-first-segment
     .segment.headline-bg
       .segment.headline
@@ -15,9 +15,9 @@
   #consult-first-segment
     .segment.headline-bg
       .segment.headline
-        margin: 200px auto 110px
+        margin: 100px auto 100px
         h1
-          font-size: 3.5em
+          display: block
         .separator
           margin: 0px auto 0px
 
@@ -25,26 +25,39 @@
     .segment.text
       ul.questions-cathegories
         display: block
+        ma
         width: 100%
         float: none
         li
-          width: 33.3333%
-          float: left
+          width: auto
+          float: right
           a
-            padding: 10px 0px
+            padding: 10px 12px
+            font-size: 12px
             text-align: center
             border: 1px solid #DDD
             box-sizing: border-box
 
   #questions-segment
     .segment.text
+      .questions-cathegories
+        img
+          display: none
+        #askAnything
+          margin: 9px
+          float: left
+          display: inline-block
+          width: auto
+          padding: 8px 12px
+    #button-show-moderators
+      display: none
+
       .questions
         width: 100%
         float: none
 
   .question-preview-wrap
     padding: ($universal-padding / 1.5) ($universal-padding / 2)
-    padding-left: 0px
     .question-preview-avatar
       width: 15%
       text-align: center
@@ -62,12 +75,31 @@
         margin-top: 15px
 
     .question-preview-text
-      max-width: 85%
+      max-width: 100%
+
+////////////// 24 em treshold ///////////////
+@media screen and(max-width: 400px)
+  #questions-segment
+    .segment.text
+      ul.questions-cathegories
+        li
+          a
+            padding: 7px 5px
+            font-size: 11px
+
+  #questions-segment
+    .segment.text
+      .questions-cathegories
+        #askAnything
+          margin: 7px
+          float: left
+          font-size: 11px
+          padding: 7px 5px
+
 
 ////////////// 24 em treshold ///////////////
 @media screen and(max-width: 24em)
   .question-preview-wrap
-    padding: ($universal-padding / 1.5) ($universal-padding / 2)
     .question-preview-avatar
       display: none
     .question-preview-text

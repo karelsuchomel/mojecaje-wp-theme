@@ -20,6 +20,7 @@ get_header();
       <li><a href="#"> Nejnovější </a></li>
       <li><a href="#"> Nejčtenější </a></li>
       <li><a href="#" class="last"> Doporučené </a></li>
+      <img src="<?php bloginfo('template_directory'); ?>/img/poradna-graphic02.png">
       <a id="button-show-moderators">Kdo vám radí?</a>
     </ul>
 
@@ -34,12 +35,21 @@ get_header();
           <div class="question-preview-text">
             <h2><a href="<?php the_permalink()?>"><?php the_title()?></a></h2>
             <p>
-              <?php the_content()?>
+              <?php
+              the_content( 'více ...' )
+              ?>
             </p>
             <hr/>
-            <em><?php the_date();?></em>
+            <em><?php the_date('d/m/Y');?></em>
             <em><?php comments_number('', '<div class="comment-icon"></div>1 komentář', '<div class="comment-icon"></div>% komentářů');?></em>
-            <em><?php the_author();?></em>
+            <em>
+            <?php $key_1_value = get_post_meta( get_the_ID(), 'nickName', true );
+            // Check if the custom field has a value.
+              if ( ! empty( $key_1_value ) ) {
+                  echo $key_1_value;
+              }
+            ?>
+            </em>
             <?php edit_post_link('<em style="color: red;">Editovat</em>'); ?>
           </div>
         </div>
@@ -73,6 +83,7 @@ get_header();
 <!-- Messages -->
 <!-- Create a question form -->
 <?php require_once('messages/askAnything.php'); ?>
+<?php require_once('messages/answering.php'); ?>
 
 <?php
 

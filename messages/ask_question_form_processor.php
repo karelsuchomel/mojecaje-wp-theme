@@ -12,13 +12,18 @@ if (isset($_POST['formSended'])) {
   $nickName = $_POST['nickName'];
   $headline = $_POST['headline'];
   $questionText = $_POST['question-text'];
+  if(isset($_POST['pictureNumber'])){
+    $pictureNumber = $_POST['pictureNumber'];
+  } else {
+    $pictureNumber = rand(1,10);
+  }
 
   echo $nickName ,", ", $headline ,", ", $questionText;
   validateInput();
 }
 
 function validateInput() {
-  global $nickName, $headline, $questionText;
+  global $nickName, $headline, $questionText, $pictureNumber;
 
   if (($nickName == "") || ($headline == "") || ($questionText == "")) {
     echo "<strong>Some fields are required, plese fill remaining fields.</strong>";
@@ -43,8 +48,8 @@ function validateInput() {
         'post_content'  => $_POST['question-text'],
         'post_type'     => 'post',
         'post_status'   => 'publish',
-        'post_author'   => 1,
-        'post_category' => array(1)
+        'post_category' => array(1),
+        'meta_input' => array( "nickName" => $nickName, "picture" => $pictureNumber)
       );
 
       wp_insert_post($my_post);

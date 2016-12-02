@@ -1,3 +1,5 @@
+var opened = 0; // 0 <- first message in HTML, 1 <- second message
+
 function dimMessage() {
 
   // which element was clicked GLOBAL variable
@@ -36,21 +38,39 @@ function createMessageContent(elementID) {
     document.getElementById('message-ask-question-form').className = "dim-message-envelope opened";
     var pageScrolledBy = window.pageYOffset;
     document.getElementById('message-ask-question-form').style.top = pageScrolledBy + "px";
+    opened = 0;
   }
   if (elementID == "contact-us-button"){
     document.getElementById('message-ask-question-form').className = "dim-message-envelope opened";
     var pageScrolledBy = window.pageYOffset;
     document.getElementById('message-ask-question-form').style.top = pageScrolledBy + "px";
+    opened = 0;
   }
-  if (elementID == "contactUs"){
+  if (elementID == "button-show-moderators"){
+    document.getElementById('message-moderators').className = "dim-message-envelope opened";
+    var pageScrolledBy = window.pageYOffset;
+    document.getElementById('message-moderators').style.top = pageScrolledBy + "px";
+    opened = 1;
   }
 }
 
 //exit dimmed-message
 function closeMessage() {
   //animate-out
-  var envelope = document.getElementsByClassName('dim-message-envelope');
-  envelope[0].className = "dim-message-envelope closed";
+  
+  elementID = this.id;
+  console.log(elementID);
+
+  if(opened == 0){
+    var envelope = document.getElementsByClassName('dim-message-envelope');
+    envelope[0].className = "dim-message-envelope closed";
+  }
+
+  if(opened == 1){
+    var dimEl = document.getElementById("message-moderators");
+    dimEl.className = "dim-message-envelope closed";
+  }
+
   var dimEl = document.getElementById('dim-element');
   dimEl.className += " closed";
 
@@ -62,9 +82,6 @@ function closeMessage() {
     var el = document.getElementById("dim-element");
     el.parentNode.removeChild(el);
   }, 300);
-
-  // remove 'fixed-page' class
-  document.body.className = '';
 }
 
 // Event listeners
@@ -82,5 +99,8 @@ window.onload = function() {
   // Close messages
   if(document.getElementById("button-close-form")){
     document.getElementById("button-close-form").addEventListener("click", closeMessage);
+  }
+  if(document.getElementById("button-close-moderators")){
+    document.getElementById("button-close-moderators").addEventListener("click", closeMessage);
   }
 };

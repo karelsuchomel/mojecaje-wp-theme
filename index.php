@@ -46,7 +46,7 @@ get_header();
           Telefon: +420 542 215 706<br>
           GPS: 49°11'36.646"N 16°36'32.037"E<br>
           <a href="https://www.facebook.com/U-Zlat%C3%A9-koruny-1419636828282850/",
-          target="_blank">Náš facebook</a>
+          target="_blank">Náš <img src="<?php bloginfo('template_directory'); ?>/img/icon-facebook.png">acebook</a>
         </p>
       </div>
       <button id="contact-us-button" class="contact-us">Napište nám</button>
