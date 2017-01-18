@@ -74,9 +74,6 @@ function closeMessage() {
   var dimEl = document.getElementById('dim-element');
   dimEl.className += " closed";
 
-  // remove fixed-page class from id="content"
-  document.getElementById('content').className = '';
-
   // remove all previously added elements
   setTimeout(function(){
     var el = document.getElementById("dim-element");

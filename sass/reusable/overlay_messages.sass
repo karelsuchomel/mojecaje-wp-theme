@@ -18,7 +18,7 @@
   display: block
   position: fixed
   width: 100%
-  min-height: 100vh
+  height: 100%
   z-index: 10
   top: 0px
   animation: dim-bg 0.2s ease-in-out
@@ -48,37 +48,28 @@
     transform: translate(-50%, 0) scale(1)
 
 @keyframes slideOut-message
-  from
+  0%
     opacity: 1
     transform: translate(-50%, 0) scale(1)
-  to
+  99%
     opacity: 0
     transform: translate(-50%, 0) scale(0.8)
-
-@media screen and(max-width: 40em)
-  @keyframes slideIn-message
-    from
-      transform: translate(100vw, 0)
-    to
-      transform: translate(0, 0)
-
-  @keyframes slideOut-message
-    from
-      transform: translate(0, 0)
-    to
-      transform: translate(100vw, 0)
+  100%
+    transform: translate(300%, 0) scale(0.8)
 
 .dim-message-envelope.closed
   pointer-events: none
   animation: slideOut-message 0.3s ease
   -webkit-animation-fill-mode: forwards
   animation-fill-mode: forwards
+  transform: translate(300%, 0) scale(0.8)
 
 .dim-message-envelope.opened
   pointer-events: all
   animation: slideIn-message 0.3s ease
   -webkit-animation-fill-mode: forwards
   animation-fill-mode: forwards
+  transform: translate(-50%, 0) scale(1)
 
 .dim-message-envelope
   position: absolute
@@ -89,7 +80,7 @@
   width: 100%
   margin: 50px 0px
   margin-left: 50%
-  transform: translate(100vw, 0)
+  transform: translate(300%, 0)
   background: white
   border-radius: 3px
 
@@ -112,7 +103,7 @@
       display: inline-block
       max-width: 60px
       font-size: 14px
-      padding: 13px 10px 13px 20px
+      padding: 13px 30px 13px 20px
       line-height: 1.75em
       color: #999
       box-shadow: none
@@ -120,8 +111,9 @@
       .dim-back-arrow-icon
         display: inline-block
         height: 20px
-        position: relative
-        top: 5px
+        position: absolute
+        top: 15px
+        right: 10px
         fill: #AAA
         transform: rotate(180deg)
 
@@ -196,15 +188,6 @@
     width: 60%
     h4
     p
-
-// page
-.fixed-page
-  right: 0
-  top: 0
-  position: fixed
-  width: 100vw
-  max-height: 100vh
-  overflow: hidden
 
 //responsive
 @import "_responsive_overlay_messages.sass"

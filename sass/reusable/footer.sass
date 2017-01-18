@@ -4,7 +4,8 @@
     padding: $universal-padding
     overflow: visible
 
-    #newsletter-form
+    .newsletter-form
+      padding: 0px 
       display: inline-block
       width: 100%
       margin: 0px
@@ -15,18 +16,19 @@
         display: block
         position: relative
         margin-top: ($universal-padding / 2)
-        margin-bottom: -25px
+        margin-bottom: -35px
         margin-left: 10px
         color: #777
         font-size: 0.9em
+        font-weight: 400
 
-      input#input-email
+      input#mce-EMAIL
         display: block
         margin: 0 auto
-        max-width: 500px
+        min-width: 300px
         box-sizing: border-box !important
         padding: 35px 15px 15px
-        font-size: 1.2em
+        font-size: 1.1em
         background: white
         text-align: center
         color: #444
@@ -40,7 +42,8 @@
         margin-top: 10px
         margin-left: 10px
 
-      button
+      .sign-up-for-newsletter
+        border: 0px !important
         margin-top: ($universal-padding / 2)
         background: hsl(349, 42%, 45%)
         &:hover
@@ -81,6 +84,7 @@
 @media screen and(max-width: 32em)
   #content
     .segment.footer
+      padding: ($universal-padding / 3)
       #newsletter-form
         input#input-email
           max-width: 300px

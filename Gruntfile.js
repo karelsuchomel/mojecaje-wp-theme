@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {                  // Target
         options: {             // Target options
-          style: 'compressed', // options: nested, compact, compressed, expanded
+          style: 'expanded', // options: nested, compact, compressed, expanded
           sourcemap: 'none',   // options: auto, file, inline, none
         },
         files: {               // Dictionary of files
@@ -30,6 +30,17 @@ module.exports = function(grunt) {
         },
       },
     },
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')({browsers: ['last 20 versions']})
+        ]
+      },
+      dist: {
+        src: 'style.css'
+      }
+    },
   });
 
   //looks for your grunt.initConfig object
@@ -41,7 +52,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   // reload server
   grunt.loadNpmTasks('grunt-contrib-connect');
+  // css auto-prefixer
+  grunt.loadNpmTasks('grunt-postcss');
   // set default
   grunt.registerTask('default', ['sass', 'concat', 'watch']);
+  // set prefix
+  grunt.registerTask('prefix', ['postcss']);
 
 };
